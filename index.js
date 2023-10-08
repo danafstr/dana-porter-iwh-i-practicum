@@ -31,7 +31,7 @@ app.get('/contacts', async (req, res) => {
 
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 app.get('/update', async (req, res) => {
-    // http://localhost:3000/update?email=rick@crowbars.net
+    // http://localhost:3000/update?email=jessiewaters@gmail.com
     const email = req.query.email;
 
     const getContact = `https://api.hubapi.com/crm/v3/objects/contacts/${email}?idProperty=email&properties=email,favorite_color,nick_name`;
