@@ -6,8 +6,10 @@ html(lang="en")
     body
         .form-wrapper
             p User: #{userEmail}
-            p Favorite Book: #{favoriteColor}
+            p Favorite Color: #{favoriteColor}
             form(method="POST")
                 label(for="newVal") New favorite color
+                label(for="newVal2") New nick name
+                input(type="text" name="newVal2" required)
                 input(type="text" name="newVal" required)
                 input(type="submit" value="Submit")
