@@ -44,7 +44,7 @@ app.get('/update', async (req, res) => {
         const response = await axios.get(getContact, { headers });
         const data = response.data;
 
-        // res.json(data);
+         res.json(data);
         res.render('update', {userEmail: data.properties.email, favoriteColor: data.properties.favorite_color, nickName: data.properties.nick_name});
         
     } catch(err) {
