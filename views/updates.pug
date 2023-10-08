@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+    head
+        title Update Custom Object Form | Integrating With HubSpot I Practicum
+        link(rel="Return to the homepage", href="/")
+    body
+        .form-wrapper
+            p User: #{userEmail}
+            p Favorite Book: #{favoriteColor}
+            form(method="POST")
+                label(for="newVal") New favorite color
+                input(type="text" name="newVal" required)
+                input(type="submit" value="Submit")
