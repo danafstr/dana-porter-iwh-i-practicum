@@ -22,7 +22,7 @@ app.get('/contacts', async (req, res) => {
     try {
         const resp = await axios.get(contacts, { headers });
         const data = resp.data.results;
-        res.render('homepage', { title: 'Update', data });      
+        res.render('homepage', { title: 'Add/Update this table', data });      
     } catch (error) {
         console.error(error);
     }
@@ -59,8 +59,9 @@ app.get('/update', async (req, res) => {
 app.post('/update', async (req, res) => {
     const update = {
         properties: {
-            "favorite_color": req.body.newVal,
-            "nick_name": req.body.newVal2
+            "nick_name": req.body.newVal2,
+            "favorite_color": req.body.newVal
+            
         }
     }
 
