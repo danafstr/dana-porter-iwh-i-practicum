@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // * Please include the private app access token in your repo BUT only an access token built in a TEST ACCOUNT. Don't do this practicum in your normal account.
-const PRIVATE_APP_ACCESS = 'pat-na1-80ca5a89-a513-4230-88ca-c915b7be6443';
+const PRIVATE_APP_ACCESS = 'pat-na1-6cae2239-b1e8-44a7-8484-14ef62c39dfe';
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
@@ -22,7 +22,7 @@ app.get('/contacts', async (req, res) => {
     try {
         const resp = await axios.get(contacts, { headers });
         const data = resp.data.results;
-        res.render('contacts', { title: 'Contacts | HubSpot APIs', data });      
+        res.render('homepage', { title: 'Update', data });      
     } catch (error) {
         console.error(error);
     }
@@ -44,8 +44,8 @@ app.get('/update', async (req, res) => {
         const response = await axios.get(getContact, { headers });
         const data = response.data;
 
-         res.json(data);
-        res.render('update', {userEmail: data.properties.email, favoriteColor: data.properties.favorite_color, nickName: data.properties.nick_name});
+        //res.json(data);
+        res.render('updates', {userEmail: data.properties.email, favoriteColor: data.properties.favorite_color, nickName: data.properties.nick_name});
         
     } catch(err) {
         console.error(err);
