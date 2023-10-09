@@ -45,7 +45,7 @@ app.get('/update', async (req, res) => {
         const data = response.data;
 
         //res.json(data);
-        res.render('updates', {userEmail: data.properties.email, favoriteColor: data.properties.favorite_color, nickName: data.properties.nick_name});
+        res.render('update', {userEmail: data.properties.email, favoriteColor: data.properties.favorite_color, nickName: data.properties.nick_name});
         
     } catch(err) {
         console.error(err);
@@ -60,7 +60,7 @@ app.post('/update', async (req, res) => {
     const update = {
         properties: {
             "favorite_color": req.body.newVal,
-            "nick_name": req.body.newVal
+            "nick_name": req.body.newVal2
         }
     }
 
