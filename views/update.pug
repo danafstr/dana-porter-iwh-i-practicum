@@ -4,13 +4,20 @@ html(lang="en")
         title Update Custom Object Form | Integrating With HubSpot I Practicum
         link(rel="stylesheet", href="/css/style.css")
     body
+      nav 
+        a(href="/") Go to Homepage
         .form-wrapper
             p User: #{userEmail}
             p Favorite Color: #{favoriteColor}
             p Nick Name: #{nickName}
+            p Hair Length: #{hairLength}
+            p                                                         
             form(method="POST")
                 label(for="newVal") New favorite color
                 input(type="text" name="newVal" required)
                 label(for="newVal2") New nick name
                 input(type="text" name="newVal2" required)
+                label(for="newVal3") New hair length
+                input(type="text" name="newVal3" required)
                 input(type="submit" value="Submit")
+                

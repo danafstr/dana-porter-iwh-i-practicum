@@ -1,14 +1,26 @@
 doctype html
- html 
-     head 
-         title= `Update`
-         meta(name="viewport" content="width=device-width, initial-scale=1")
-         link(rel="stylesheet", href="/css/style.css")
-         a(href='http://localhost:3000') Add/Update this table
-     body    
-         h1 Contacts
-         .cards 
-             each contact in data
-                 .card 
-                     h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
-                     p.card__email #{contact.properties.email}
+html
+  head
+    title= `${title}`
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    nav 
+      a(href="/contacts") Update this table
+    table
+      thead
+        tr
+          th Name
+          th Email
+          th Favorite Color
+          th Nickname
+          th Hair length
+      tbody
+        each contact in data
+          tr
+            td #{contact.properties.firstname} #{contact.properties.lastname}
+            td #{contact.properties.email}
+            td #{contact.properties.favorite_color}
+            td #{contact.properties.nick_name}
+            td #{contact.properties.hair_length}
+
